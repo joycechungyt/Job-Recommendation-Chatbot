@@ -14,7 +14,7 @@ The chatbot can be run from the command line.
 
 ## Overview
 
-The `chat.py` script is the main script that runs the chatbot. Here's a brief overview of how it works:
+The `chromadb_job_chatbot_jpynb.py` script is the main script that runs the chatbot. Here's a brief overview of how it works:
 
 1. The script begins by importing the necessary modules and setting up the device for PyTorch computations.
 2. It then loads the trained model and the intents from a JSON file.
