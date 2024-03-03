@@ -1,36 +1,23 @@
-# Job-Recommendation-Chatbot
+# Job Recommendation Chatbot
 
-Welcome to the Job Recommendation Chatbot! This chatbot uses Natural Language Processing (NLP) to understand and respond to user inputs. It also includes a web scraping feature to provide information about different data science jobs. 
+Welcome to the Job Recommendation Chatbot! This chatbot utilizes Natural Language Processing (NLP) to understand and respond to user inputs. It provides job recommendations based on data science job listings.
 
 ## Setup
 
-### Prerequisites:
-
-You'll need Python 3.7 or later installed on your computer. 
-
-### Running the Chatbot:
-
-The chatbot can be run from the command line.
+To run this chatbot, you will need Python 3.7 or a later version installed on your computer. You also need to install the following packages: `chromadb`, `PyPDF2`, `sentence_transformers`, `gradio`, `accelerate`, and `transformers`. These can be installed using the command: `!pip install chromadb PyPDF2 sentence_transformers gradio accelerate transformers`.
 
 ## Overview
 
-The `chromadb_job_chatbot_jpynb.py` script is the main script that runs the chatbot. Here's a brief overview of how it works:
+The `chromadb_job_chatbot_jpynb.py` script runs the Job Recommendation Chatbot. It starts by installing necessary packages and setting the locale encoding. Then, it reads job listings from CSV files and combines them into a single list.
 
-1. The script begins by importing the necessary modules and setting up the device for PyTorch computations.
-2. It then loads the trained model and the intents from a JSON file.
-3. The chatbot enters into a while loop, where it waits for user input. If the input is "quit", it breaks the loop and the chatbot stops.
-4. If the input matches one of the keys in the data dictionary, it will scrape the data and print the standings.
-5. If the input does not match, it tokenizes the input and transforms it into a bag-of-words tensor. This tensor is then fed into the model which produces an output. The output is a tag that corresponds to the type of user intent.
-6. The chatbot then selects a random response from the corresponding tag and prints it.
+The script initializes ChromaDB, a text search and retrieval library, and uses a sentence transformer model to embed job descriptions into a vector space. The embeddings are stored in a ChromaDB collection.
 
-## Web Scraping Feature
-
-The chatbot includes a web scraping feature that uses Beautiful Soup to parse HTML and extract data. The HTML for the tables is stored in a Python dictionary, and the `extract_data` function takes a key from this dictionary, parses the HTML, and returns a Pandas DataFrame with the table data.
+The chatbot interface is created using the Gradio library. Users can enter queries or request a job recommendation. The chatbot generates a context using the user's queries and provides a job recommendation using a language model.
 
 ## Example Interactions
 
-Here are a few examples of how the chatbot may respond to various user inputs. The responses are chosen randomly from a list of possible responses associated with each intent tag.
+Here are a few examples of how the chatbot may respond to user inputs:
 
 **User:** "What roles are available right now?"
 
-**Bot:** " 
+**Bot:** "..."
